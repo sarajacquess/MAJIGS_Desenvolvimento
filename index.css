@@ -1,4 +1,3 @@
-
 /* ── HERO ── */
 .page-hero {
   background: var(--sand-light);
@@ -38,7 +37,10 @@
   pointer-events: none;
 }
 
-.page-hero-text { position: relative; z-index: 1; }
+.page-hero-text {
+  position: relative;
+  z-index: 1;
+}
 
 .hero-title {
   font-family: var(--font-serif);
@@ -188,15 +190,25 @@
     min-height: auto;
   }
 
-  .page-hero-visual { display: none; }
+  .page-hero-visual {
+    display: none;
+  }
 
-  .servicos-section { padding: 4rem 1.5rem; }
+  .servicos-section {
+    padding: 4rem 1.5rem;
+  }
 
-  .servicos-grid { grid-template-columns: 1fr; }
+  .servicos-grid {
+    grid-template-columns: 1fr;
+  }
 
-  .como-funciona { padding: 4rem 1.5rem; }
+  .como-funciona {
+    padding: 4rem 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .servicos-grid { gap: 1.2rem; }
+  .servicos-grid {
+    gap: 1.2rem;
+  }
 }

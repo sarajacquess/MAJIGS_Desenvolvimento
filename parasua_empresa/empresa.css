@@ -1,4 +1,3 @@
-
 /* ── HERO ── */
 .page-hero {
   background: var(--sand-light);
@@ -38,7 +37,10 @@
   pointer-events: none;
 }
 
-.page-hero-text { position: relative; z-index: 1; }
+.page-hero-text {
+  position: relative;
+  z-index: 1;
+}
 
 .hero-title {
   font-family: var(--font-serif);
@@ -83,7 +85,9 @@
   padding: 1.8rem 1.6rem;
 }
 
-.stat-card--green { background: var(--green); }
+.stat-card--green {
+  background: var(--green);
+}
 
 .stat-num {
   font-family: var(--font-serif);
@@ -94,7 +98,9 @@
   margin-bottom: 0.4rem;
 }
 
-.stat-card--green .stat-num { color: var(--sand-light); }
+.stat-card--green .stat-num {
+  color: var(--sand-light);
+}
 
 .stat-label {
   font-size: 0.76rem;
@@ -102,7 +108,10 @@
   line-height: 1.5;
 }
 
-.stat-card--green .stat-label { color: var(--green-xlight); opacity: 0.85; }
+.stat-card--green .stat-label {
+  color: var(--green-xlight);
+  opacity: 0.85;
+}
 
 .stat-wide {
   background: var(--green-xlight);
@@ -143,8 +152,14 @@
   top: 0;
 }
 
-.icon-people::before { left: 0; }
-.icon-people::after  { left: 8px; opacity: 0.6; }
+.icon-people::before {
+  left: 0;
+}
+
+.icon-people::after {
+  left: 8px;
+  opacity: 0.6;
+}
 
 .stat-wide-text {
   font-size: 0.84rem;
@@ -152,7 +167,9 @@
   line-height: 1.5;
 }
 
-.stat-wide-text strong { color: var(--green); }
+.stat-wide-text strong {
+  color: var(--green);
+}
 
 /* ── POR QUE INVESTIR ── */
 .por-que {
@@ -318,9 +335,39 @@
   position: relative;
 }
 
-.formato-icon--group::before  { content: '⬤⬤'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: var(--green); letter-spacing: 3px; }
-.formato-icon--leader::before { content: '⬤';  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--green); }
-.formato-icon--program::before { content: '▤';  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--green); }
+.formato-icon--group::before {
+  content: '⬤⬤';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: var(--green);
+  letter-spacing: 3px;
+}
+
+.formato-icon--leader::before {
+  content: '⬤';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--green);
+}
+
+.formato-icon--program::before {
+  content: '▤';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--green);
+}
 
 .formato-card h3 {
   font-family: var(--font-serif);
@@ -344,7 +391,7 @@
   text-align: center;
 }
 
-.empresas-strip > p {
+.empresas-strip>p {
   font-size: 0.76rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -370,7 +417,9 @@
   transition: color var(--transition);
 }
 
-.empresa-logo:hover { color: rgba(255, 255, 255, 0.7); }
+.empresa-logo:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
 
 /* ── PROCESSO ── */
 .processo {
@@ -417,7 +466,9 @@
     min-height: auto;
   }
 
-  .page-hero-visual { display: none; }
+  .page-hero-visual {
+    display: none;
+  }
 
   .por-que {
     grid-template-columns: 1fr;
@@ -425,13 +476,25 @@
     gap: 2.5rem;
   }
 
-  .formatos { padding: 4rem 1.5rem; }
-  .formatos-grid { grid-template-columns: 1fr; }
+  .formatos {
+    padding: 4rem 1.5rem;
+  }
 
-  .empresas-strip { padding: 3rem 1.5rem; }
-  .logos-row { gap: 1.5rem; }
+  .formatos-grid {
+    grid-template-columns: 1fr;
+  }
 
-  .processo { padding: 4rem 1.5rem; }
+  .empresas-strip {
+    padding: 3rem 1.5rem;
+  }
+
+  .logos-row {
+    gap: 1.5rem;
+  }
+
+  .processo {
+    padding: 4rem 1.5rem;
+  }
 
   .cta-section {
     grid-template-columns: 1fr;

@@ -2,7 +2,7 @@
 const WA = 'https://wa.me/5551985513091';
 
 // Redireciona todos os botões de ação para o WhatsApp
-document.querySelectorAll('.btn-whatsapp').forEach(function(btn) {
+document.querySelectorAll('.btn-whatsapp').forEach(function (btn) {
   btn.href = WA;
   btn.target = '_blank';
   btn.rel = 'noopener';
@@ -10,13 +10,13 @@ document.querySelectorAll('.btn-whatsapp').forEach(function(btn) {
 
 // Nav: sombra ao rolar
 var nav = document.querySelector('.nav');
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   if (nav) nav.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
 
 // Menu mobile: abrir/fechar
-var toggle  = document.querySelector('.nav-toggle');
-var drawer  = document.querySelector('.nav-drawer');
+var toggle = document.querySelector('.nav-toggle');
+var drawer = document.querySelector('.nav-drawer');
 var overlay = document.querySelector('.nav-overlay');
 
 function openMenu() {
@@ -33,46 +33,46 @@ function closeMenu() {
   document.body.style.overflow = '';
 }
 
-if (toggle) toggle.addEventListener('click', function() {
+if (toggle) toggle.addEventListener('click', function () {
   toggle.classList.contains('open') ? closeMenu() : openMenu();
 });
 
 if (overlay) overlay.addEventListener('click', closeMenu);
 
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') closeMenu();
 });
 
 // Fechar drawer ao clicar em links internos
-if (drawer) drawer.querySelectorAll('a').forEach(function(a) {
+if (drawer) drawer.querySelectorAll('a').forEach(function (a) {
   a.addEventListener('click', closeMenu);
 });
 
 // Scroll reveal
 var reveals = document.querySelectorAll('.reveal');
 if (reveals.length && 'IntersectionObserver' in window) {
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
       if (entry.isIntersecting) {
         var delay = entry.target.dataset.delay || 0;
-        setTimeout(function() {
+        setTimeout(function () {
           entry.target.classList.add('visible');
         }, +delay);
         observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.12 });
-  reveals.forEach(function(el) { observer.observe(el); });
+  reveals.forEach(function (el) { observer.observe(el); });
 }
 
 // Tabs (planos de consultoria)
-var tabBtns   = document.querySelectorAll('.js-tab-btn');
+var tabBtns = document.querySelectorAll('.js-tab-btn');
 var tabPanels = document.querySelectorAll('.js-tab-panel');
 
-tabBtns.forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    tabBtns.forEach(function(b) { b.classList.remove('active'); });
-    tabPanels.forEach(function(p) { p.classList.remove('active'); });
+tabBtns.forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    tabBtns.forEach(function (b) { b.classList.remove('active'); });
+    tabPanels.forEach(function (p) { p.classList.remove('active'); });
     btn.classList.add('active');
     var panel = document.querySelector('[data-panel="' + btn.dataset.tab + '"]');
     if (panel) panel.classList.add('active');
@@ -83,7 +83,7 @@ tabBtns.forEach(function(btn) {
 var form = document.querySelector('.js-form');
 if (form) {
   var required = form.querySelectorAll('[data-required]');
-  var success  = form.querySelector('.form-success');
+  var success = form.querySelector('.form-success');
 
   function validate(input) {
     var ok = input.type === 'email'
@@ -95,29 +95,29 @@ if (form) {
     return ok;
   }
 
-  required.forEach(function(input) {
-    input.addEventListener('blur', function() { validate(input); });
-    input.addEventListener('input', function() {
+  required.forEach(function (input) {
+    input.addEventListener('blur', function () { validate(input); });
+    input.addEventListener('input', function () {
       if (input.classList.contains('error')) validate(input);
     });
   });
 
-  form.addEventListener('submit', function(e) {
+  form.addEventListener('submit', function (e) {
     e.preventDefault();
     var allOk = true;
-    required.forEach(function(input) { if (!validate(input)) allOk = false; });
+    required.forEach(function (input) { if (!validate(input)) allOk = false; });
 
     if (allOk) {
       // Monta mensagem e abre WhatsApp
-      var nome    = form.querySelector('#nome')?.value || '';
+      var nome = form.querySelector('#nome')?.value || '';
       var empresa = form.querySelector('#empresa')?.value || '';
-      var email   = form.querySelector('#email')?.value || '';
-      var equipe  = form.querySelector('#equipe')?.value || '';
+      var email = form.querySelector('#email')?.value || '';
+      var equipe = form.querySelector('#equipe')?.value || '';
       var msg = 'Olá, Jéssica! Gostaria de solicitar uma proposta corporativa.\n'
-              + 'Nome: ' + nome + '\n'
-              + 'Empresa: ' + empresa + '\n'
-              + 'E-mail: ' + email + '\n'
-              + 'Equipe: ' + equipe;
+        + 'Nome: ' + nome + '\n'
+        + 'Empresa: ' + empresa + '\n'
+        + 'E-mail: ' + email + '\n'
+        + 'Equipe: ' + equipe;
       window.open(WA + '?text=' + encodeURIComponent(msg), '_blank');
     }
   });
